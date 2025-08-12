@@ -11,6 +11,6 @@ export class AuthController {
   @Get('twitter/callback')
   @UseGuards(TwitterAuthGuard)
   async twitterCallback(@Req() req: Request, @Res() res: Response) {
-    return res.redirect('https://extraordinary-pixie-fb5afc.netlify.app');
+    return res.redirect('https://iryswalls.netlify.app');
   }
 }
