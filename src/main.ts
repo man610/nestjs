@@ -19,6 +19,7 @@ async function bootstrap() {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  await app.listen(3000);
+    const port = process.env.PORT || 3000; // Use Render's port if provided
+  await app.listen(port, '0.0.0.0'); // Bind to all interfaces
 }
 bootstrap();
