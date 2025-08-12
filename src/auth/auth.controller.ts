@@ -1,4 +1,4 @@
-import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import { Controller, Get, Req,Res, UseGuards } from '@nestjs/common';
 import type { Request,Response } from 'express';
 import { TwitterAuthGuard } from './guards/twitter.guard';
 
