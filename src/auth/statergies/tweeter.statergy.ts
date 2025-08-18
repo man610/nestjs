@@ -15,7 +15,7 @@ export class TwitterStrategy extends PassportStrategy(Strategy, 'twitter') {
       callbackURL: process.env.TWITTER_CALLBACK_URL!,
       scope: ['tweet.read', 'users.read', 'offline.access'],
       passReqToCallback: true,
-      clientType: 'confidential'
+      clientType: 'confidential',
     });
   }
 
@@ -27,14 +27,14 @@ export class TwitterStrategy extends PassportStrategy(Strategy, 'twitter') {
     done: Function,
   ) {
     try {
-      console.log(profile);
-      const response = await axios.get('https://api.twitter.com/2/users/me', {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+      // console.log(profile._json);
+      // const response = await axios.get('https://api.twitter.com/2/users/me', {
+      //   headers: {
+      //     Authorization: `Bearer ${accessToken}`,
+      //   },
+      // });
 
-      done(null, response.data.data);
+      done(null, profile._json);
     } catch (error) {
       done(error, false);
     }

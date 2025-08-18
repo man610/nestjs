@@ -1,15 +1,18 @@
 import { AutoMap } from '@automapper/classes';
 
-export class CreateFileDto {
+export class ResUploadFileDto {
+  @AutoMap()
+  id: string;
+
   @AutoMap()
   userId: String;
 
   @AutoMap()
   irysId: string;
 
-  // @AutoMap()
-  // signature: string;
+  @AutoMap()
+  timestamp: number;
 
   @AutoMap()
-  timestamp: Date;
+  hasedData: string;
 }
