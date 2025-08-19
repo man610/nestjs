@@ -4,8 +4,8 @@ DotenvConfing({ path: '.env' });
 
 export const dbConfig: DataSourceOptions = {
   type: 'postgres',
-  host: 'localhost',
-  port: 5432,
+  host: process.env.DATABASE_HOST,
+  port: +process.env.DB_PORT!,
   password: process.env.DB_PASSWORD,
   username: process.env.DB_USERNAME,
   database: process.env.DATABASE,
