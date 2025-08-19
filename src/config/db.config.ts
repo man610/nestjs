@@ -15,8 +15,8 @@ export const dbConfig: DataSourceOptions = {
   migrationsRun: false,
   logging: true,
   synchronize: false,
-  ssl: {
-    rejectUnauthorized: false, // needed for Render DB
-  },
+  // ssl: {
+  //   rejectUnauthorized: false, // needed for Render DB
+  // },
 };
 export const AppDataSource = new DataSource(dbConfig);
