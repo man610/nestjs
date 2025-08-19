@@ -4,15 +4,19 @@ DotenvConfing({ path: '.env' });
 
 export const dbConfig: DataSourceOptions = {
   type: 'postgres',
-  host: process.env.DATABASE_HOST,
-  port: +process.env.DB_PORT!,
-  password: process.env.DB_PASSWORD,
-  username: process.env.DB_USERNAME,
-  database: process.env.DATABASE,
+  // host: process.env.DATABASE_HOST,
+  // port: +process.env.DB_PORT!,
+  // password: process.env.DB_PASSWORD,
+  // username: process.env.DB_USERNAME,
+  // database: process.env.DATABASE,
+  url: process.env.DATABASE_URL,
   entities: [__dirname + '/../**/entities/*{.ts,.js}'],
   migrations: [__dirname + '/../**/migrations/*{.ts,.js}'],
   migrationsRun: false,
   logging: true,
   synchronize: false,
+  ssl: {
+    rejectUnauthorized: false, // needed for Render DB
+  },
 };
 export const AppDataSource = new DataSource(dbConfig);
